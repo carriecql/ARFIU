@@ -70,12 +70,6 @@
 
 The Adult Income dataset contains 48,842 samples; after removing missing data (samples containing "?"), we obtain a clean dataset containing 45,222 samples. For the NYSF dataset, data from January, May, and October in each borough were selected to serve as the complete dataset for a single task.
 
-Links to some official datasets:
-
-1. https://archive.ics.uci.edu/ml/datasets/adult  
-2. https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis  
-3. https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data)
-
 ---
 
 ## 2. Hyperparameter Settings
