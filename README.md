@@ -114,45 +114,45 @@ The Adult Income dataset contains 48,842 samples; after removing missing data (s
 The hyperparameter configurations for each method are described below; the specific values still need to be determined through tuning under practical operating conditions:
 
 #### FC
-- **Classifier**: LogisticRegression  
-- **max_iter** (max iterations): recommended range 50–200, recommended value 100  
-- **c** (fairness constraint threshold): recommended ranges 0.01–0.3 (for DP metric) and 0.01–0.15 (for EOP/EOD metrics)  
-- **tol** (convergence tolerance): recommended value 1e-4
+- **Classifier**: LogisticRegression;  
+- **max_iter** (max iterations): recommended range 50–200, recommended value 100;  
+- **c** (fairness constraint threshold): recommended ranges 0.01–0.3 (for DP metric) and 0.01–0.15 (for EOP/EOD metrics);  
+- **tol** (convergence tolerance): recommended value 1e-4;
 
 #### LBC
-- **Classifier**: LogisticRegression  
-- **max_iter**: recommended range 20–50, recommended value 50  
-- **η** (weight update step size): recommended ranges 1.0–3.0 (for DP) and 0.001–0.02 (for EOP/EOD)  
-- **tol**: recommended range 1e-4 to 1e-3, recommended value 1e-4
+- **Classifier**: LogisticRegression;  
+- **max_iter**: recommended range 20–50, recommended value 50;  
+- **η** (weight update step size): recommended ranges 1.0–3.0 (for DP) and 0.001–0.02 (for EOP/EOD);  
+- **tol**: recommended range 1e-4 to 1e-3, recommended value 1e-4;
 
 #### RFI
-- **Classifier**: LogisticRegression  
-- **max_iter**: recommended range 50–200, recommended value 50  
-- **λ** (fairness penalty coefficient): from {0.01, 0.1, 0.5, 1.0, 2.0, 5.0, 6.0, 8.0, 10.0}, recommended value 1.0  
-- **α** (Rényi order): recommended range 1–16  
-- **tol**: recommended range 1e-6–1e-3, recommended value 1e-4
+- **Classifier**: LogisticRegression;  
+- **max_iter**: recommended range 50–200, recommended value 50;  
+- **λ** (fairness penalty coefficient): from {0.01, 0.1, 0.5, 1.0, 2.0, 5.0, 6.0, 8.0, 10.0}, recommended value 1.0;  
+- **α** (Rényi order): recommended range 1–16;  
+- **tol**: recommended range 1e-6–1e-3, recommended value 1e-4;
 
 #### FairMixup
-- **Classifier network architecture**: uses the official code  
-- **batchsize**: recommended 1,000 (Adult), 200 (Compas), 2,000 (Synthetic)  
-- **epochs**: recommended 200  
-- **learning rate**: recommended 1e-3  
-- **α**: recommended value 1.0  
-- **λ**: recommended range for DP/EOD: 0.1–0.7; for EOP: 0.5–5
+- **Classifier network architecture**: uses the official code;  
+- **batchsize**: recommended 1,000 (Adult), 200 (Compas), 2,000 (Synthetic);  
+- **epochs**: recommended 200;  
+- **learning rate**: recommended 1e-3;  
+- **α**: recommended value 1.0;  
+- **λ**: recommended range for DP/EOD: 0.1–0.7; for EOP: 0.5–5;
 
 #### Fairbatch
-- **Classifier network architecture**: uses the official code  
-- **batchsize**: recommended 1,000 (Adult), 200 (Compas), 2,000 (Synthetic)  
-- **epochs**: recommended {140, 200, 250}  
-- **learning rate**: recommended 1e-2 or 1e-3  
-- **α** (adjustment step size): recommended range 0.0001–0.1, with recommended values from {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5}
+- **Classifier network architecture**: uses the official code;  
+- **batchsize**: recommended 1,000 (Adult), 200 (Compas), 2,000 (Synthetic);  
+- **epochs**: recommended {140, 200, 250};  
+- **learning rate**: recommended 1e-2 or 1e-3;  
+- **α** (adjustment step size): recommended range 0.0001–0.1, with recommended values from {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5};
 
 #### APW
-- **Classifier**: LogisticRegression  
-- **epochs**: recommended 200  
-- **α** (step size): recommended range 0.5–5  
-- **subgroup learning rate**: recommended from {1e1, 1e2, 1e3, 1e4, 1e6, 3e6, 4e6, 5e6, 1e7, 1e8, 3e8, 4e8, 1e9}  
-- **d** (decision boundary): recommended value 0.5
+- **Classifier**: LogisticRegression;  
+- **epochs**: recommended 200;  
+- **α** (step size): recommended range 0.5–5;  
+- **subgroup learning rate**: recommended from {1e1, 1e2, 1e3, 1e4, 1e6, 3e6, 4e6, 5e6, 1e7, 1e8, 3e8, 4e8, 1e9};  
+- **d** (decision boundary): recommended value 0.5;
 
 ---
 
@@ -161,38 +161,38 @@ The hyperparameter configurations for each method are described below; the speci
 For **FairDolce** (Zhao et al., 2023), **FairSAOML** (Zhao et al., 2024), **LTFconVAE** (Chen et al., 2025), and **ConSupFairOL** (Chen et al., 2026), we employ the official code provided by the authors or implement them based on the algorithms described in the papers. The hyperparameter tuning settings for each method are described as follows:
 
 #### FairDolce (https://github.com/harderbetter/fairdolce)
-- **batchsize**: recommended 4096 (NYSF) and 500 (Credit)  
-- **epochs**: recommended 30  
-- **Initial dual parameters** (*λ₁*, *λ₂*, *λ₃*): recommended (0.5, 0.8, 0.5)  
-- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2  
-- **Boundary values** (*ε₁*, *ε₂*, *ε₃*): recommended (0.025, 0.025, 0.01)
+- **batchsize**: recommended 4096 (NYSF) and 500 (Credit);  
+- **epochs**: recommended 30;  
+- **Initial dual parameters** (*λ₁*, *λ₂*, *λ₃*): recommended (0.5, 0.8, 0.5);  
+- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2;  
+- **Boundary values** (*ε₁*, *ε₂*, *ε₃*): recommended (0.025, 0.025, 0.01);
 
 #### LTFconVAE
-- **batchsize**: recommended 4096 (NYSF) and 500 (Credit)  
-- **epochs**: recommended 30  
-- **Initial dual parameters** (*w₁*, *w₂*, *w₃*): recommended (0.5, 0.8, 0.0)  
-- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2  
-- **Boundary values** (*m₁*, *m₂*, *m₃*): recommended (0.025, 0.025, 0.5)
+- **batchsize**: recommended 4096 (NYSF) and 500 (Credit);  
+- **epochs**: recommended 30;  
+- **Initial dual parameters** (*w₁*, *w₂*, *w₃*): recommended (0.5, 0.8, 0.0);  
+- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2;  
+- **Boundary values** (*m₁*, *m₂*, *m₃*): recommended (0.025, 0.025, 0.5);
 
 #### ConSupFairOL
-- **batchsize**: recommended 4096 (NYSF) and 500 (Credit)  
-- **epochs**: recommended 30  
-- **Initial dual parameter** *w*: recommended 0.1  
-- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2  
-- **Boundary parameter** *ρ*: recommended 0.025  
-- **Temperature coefficient** *τ*: recommended 0.7 (NYSF) and 0.8 (Credit)  
-- **λ**: recommended 0.2 (NYSF) and 0.1 (Credit)
+- **batchsize**: recommended 4096 (NYSF) and 500 (Credit);  
+- **epochs**: recommended 30;  
+- **Initial dual parameter** *w*: recommended 0.1;  
+- **Learning rates** *n₁* and *n₂*: recommended 1e-3 and 1e-2;  
+- **Boundary parameter** *ρ*: recommended 0.025;  
+- **Temperature coefficient** *τ*: recommended 0.7 (NYSF) and 0.8 (Credit);  
+- **λ**: recommended 0.2 (NYSF) and 0.1 (Credit);
 
 #### Suggested parameter tuning for the above methods
-- **Initial range for dual parameters**: {0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2.5, 10, 50, 100}  
-- **Learning rates *n₁* and *n₂***: {0.00001, 0.00002, 0.00005, 0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10}  
-- **Boundary values**: {0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06}
+- **Initial range for dual parameters**: {0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2.5, 10, 50, 100};  
+- **Learning rates *n₁* and *n₂***: {0.00001, 0.00002, 0.00005, 0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10};  
+- **Boundary values**: {0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06};
 
 #### FairSAOML
-- **batchsize**: recommended 800 (NYSF) and 500 (Credit)  
-- **Initial dual parameter** *λ*: recommended range {0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000}; recommended value: 0.1  
-- **Learning rates *n₁* and *n₂***: recommended range {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000}; recommended value: 1e-3  
-- **Number of iterations *N***: recommended range {20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100}, recommended value 30
+- **batchsize**: recommended 800 (NYSF) and 500 (Credit);  
+- **Initial dual parameter** *λ*: recommended range {0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000}; recommended value: 0.1;  
+- **Learning rates *n₁* and *n₂***: recommended range {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000}; recommended value: 1e-3;  
+- **Number of iterations *N***: recommended range {20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100}, recommended value 30;
 
 #### Network architectures of the baseline methods
 The semantic/variable encoders and decoders of FairDolce and LTFconVAE, the encoder of ConSupFairOL, and the feature extractor of the proposed method share the same network architecture, each consisting of one linear layer followed by a LeakyReLU activation function and a Batch Normalization layer; meanwhile, the classifiers of all methods are the same, comprising Batch Normalization, a Sigmoid activation function, and one linear layer.
