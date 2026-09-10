@@ -184,15 +184,15 @@ For **FairDolce** (Zhao et al., 2023), **FairSAOML** (Zhao et al., 2024), **LTFc
 - **λ**: recommended 0.2 (NYSF) and 0.1 (Credit);
 
 #### Suggested parameter tuning for the above methods
-- **Initial range for dual parameters**: {0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2.5, 10, 50, 100};  
-- **Learning rates *n₁* and *n₂***: {0.00001, 0.00002, 0.00005, 0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10};  
-- **Boundary values**: {0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06};
+- **Initial range for dual parameters**: {0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2.5, 10, 50, 100}. 
+- **Learning rates *n₁* and *n₂***: {0.00001, 0.00002, 0.00005, 0.0001, 0.0002, 0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10}.  
+- **Boundary values**: {0.01, 0.015, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06}.
 
 #### FairSAOML
-- **batchsize**: recommended 800 (NYSF) and 500 (Credit);  
-- **Initial dual parameter** *λ*: recommended range {0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000}; recommended value: 0.1;  
-- **Learning rates *n₁* and *n₂***: recommended range {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000}; recommended value: 1e-3;  
-- **Number of iterations *N***: recommended range {20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100}, recommended value 30;
+- **batchsize**: recommended 800 (NYSF) and 500 (Credit). 
+- **Initial dual parameter** *λ*: recommended range {0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000}; recommended value: 0.1.  
+- **Learning rates *n₁* and *n₂***: recommended range {0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000}; recommended value: 1e-3.  
+- **Number of iterations *N***: recommended range {20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100}, recommended value 30.
 
 #### Network architectures of the baseline methods
 The semantic/variable encoders and decoders of FairDolce and LTFconVAE, the encoder of ConSupFairOL, and the feature extractor of the proposed method share the same network architecture, each consisting of one linear layer followed by a LeakyReLU activation function and a Batch Normalization layer; meanwhile, the classifiers of all methods are the same, comprising Batch Normalization, a Sigmoid activation function, and one linear layer.
